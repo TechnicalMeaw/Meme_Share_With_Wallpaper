@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Download"
+    android:background="@drawable/background_theme">
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextWidth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_above="@id/memeImageView"
+        android:forceHasOverlappingRendering="true"
+        android:gravity="center"
+        android:hint="Width [in pixels]"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:textColor="@color/White"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBar" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextHeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_above="@id/memeImageView"
+        android:forceHasOverlappingRendering="true"
+        android:gravity="center"
+        android:hint="Height [in pixels]"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:textColor="@color/White"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toBottomOf="@id/appBar" />
+
+
+    <include
+        layout="@layout/toolbar"
+        android:id="@+id/appBar"
+        />
+
+
+
+    <ImageView
+        android:id="@+id/memeImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnShare"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextHeight"
+        tools:srcCompat="@tools:sample/avatars"
+        android:layout_marginBottom="7dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp" />
+
+    <Button
+        android:id="@+id/btnShare"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="10dp"
+        android:text="Share"
+        android:fontFamily="@font/acme"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@drawable/button_text_color"
+        android:background="@drawable/custom_button_buttom"
+        android:onClick="clickShare"
+        />
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="10dp"
+        android:text="Next"
+        android:fontFamily="@font/acme"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        android:textColor="@drawable/button_text_color"
+        android:background="@drawable/custom_button_buttom"
+        android:onClick="clickNext"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="86dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone"
+        app:backgroundTint="#3A3A3A"
+        app:layout_constraintBottom_toTopOf="@+id/btnNext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:rippleColor="#DEDEDE"
+        app:srcCompat="@android:drawable/stat_sys_download" />
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/progressBar"
+        style="@style/SpinKitView.ThreeBounce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/memeImageView"
+        app:layout_constraintEnd_toEndOf="@+id/memeImageView"
+        app:layout_constraintStart_toStartOf="@+id/memeImageView"
+        app:layout_constraintTop_toTopOf="@+id/memeImageView"
+        android:visibility="gone"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

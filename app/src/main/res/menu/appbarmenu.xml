@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+
+    <item
+        android:id="@+id/btnBack"
+        android:icon="@drawable/back"
+        android:title="Back"
+        app:showAsAction="always"
+        android:visible="false"/>
+
+
+    <item
+        android:id="@+id/btnOk"
+        android:icon="@drawable/ok"
+        android:title="Ok"
+        app:showAsAction="always"
+        android:visible="false"/>
+
+
+    <item
+        android:id="@+id/btnSize"
+        android:title="Custom Size"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/size"
+        android:visible="false"/>
+
+    <item
+        android:id="@+id/Type"
+        android:title="Category"
+        android:icon="@drawable/server"
+        app:showAsAction="ifRoom"
+        >
+
+        <menu>
+
+            <item
+                android:id="@+id/Server1"
+                android:title="Memes"
+                />
+
+            <item
+                android:id="@+id/Server2"
+                android:title="Images"
+                />
+
+        </menu>
+
+    </item>
+
+    <item
+        android:id="@+id/btnAbout"
+        android:title="About"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/btnExit"
+        android:title="Back"
+        app:showAsAction="never"/>
+
+</menu>
